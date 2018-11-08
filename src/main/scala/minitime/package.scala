@@ -1,5 +1,6 @@
 import java.time.{Duration => JDuration, Period => JPeriod, _}
 import scala.concurrent.duration._
+import scala.language.implicitConversions
 
 package object minitime {
   implicit class RichInt(i: Int) {
@@ -33,4 +34,17 @@ package object minitime {
     def *(scalar: Int)(implicit multiply: Multiply[L]) = multiply(l, scalar)
     def /[R, C](r: R)(implicit divide: Divide[L, R, C]) = divide(l, r)
   }
+
+  implicit def infixOrderingOps[T: Ordering](x: T) ={
+    Ordering.Implicits.infixOrderingOps(x)
+  }
+
+  def createOrdering[T](f: (T, T) => Int) = new Ordering[T] {
+    override def compare(x: T, y: T): Int = f(x, y)
+  }
+  implicit val ldOrdering = createOrdering[LocalDate](_ compareTo _)
+  implicit val ldtOrdering = createOrdering[LocalDateTime](_ compareTo _)
+  implicit val ltOrdering = createOrdering[LocalTime](_ compareTo _)
+  implicit val zdtOrdering = createOrdering[ZonedDateTime](_ compareTo _)
+  implicit val dOrdering = createOrdering[JDuration](_ compareTo _)
 }
