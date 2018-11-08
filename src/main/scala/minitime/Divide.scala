@@ -12,5 +12,6 @@ object Divide {
   }
 
   implicit val di = create((l: Duration, r: Int) => l dividedBy r)
-  implicit val dd = create((l: Duration, r: Duration) => l dividedBy r)
+  // Not available in Java 8
+  // implicit val dd = create((l: Duration, r: Duration) => l dividedBy r)
 }
