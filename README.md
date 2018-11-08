@@ -30,5 +30,24 @@ val p4: Period = Period(years = 1, months = 2, days = 3)
 
 ## Basic Arithmetic
 
+``` scala
+LocalDate(2018, 1, 31) + 1.day * 2
+// 2018-02-02
+
+LocalDate(2018, 4, 30) - 2.month
+// 2018-02-28
+
+LocalDateTime(2018, 8, 31, 23, 59) + 1.minute + 3.seconds
+// 2018-09-01T00:00:03
+
+LocalDate(2018, 3, 1) - LocalDate(2018, 2, 1)
+// 28
+
+LocalDateTime.parse("2018-09-01T15:39:39") - LocalDateTime(2018, 8, 31, 0, 0)
+// java.time.Duration = PT39H39M39S
+
+3.minutes / 2 + 3.seconds * 3
+// java.time.Duration = PT1M39S
+```
 
 ## Ordering
