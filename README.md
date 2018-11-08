@@ -1,6 +1,6 @@
 # Minitime
 
-A Scala wrapper around `java.time`
+A Scala wrapper around [Java Time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
 
 ## Instantiation
 
