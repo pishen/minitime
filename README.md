@@ -1,6 +1,6 @@
 # Minitime
 
-A Scala wrapper around [Java Time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+A Scala wrapper around [Java Time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html) with Scala.js support.
 
 ## Instantiation
 
@@ -51,3 +51,19 @@ LocalDateTime.parse("2018-09-01T15:39:39") - LocalDateTime(2018, 8, 31, 0, 0)
 ```
 
 ## Ordering
+
+``` scala
+3.minutes < 3.hours
+// true
+
+LocalDate(2018, 3, 9) <= LocalDate(2017, 8, 31)
+// false
+
+Seq(1.hour, 2.minutes, 3.seconds).sorted
+// List(PT3S, PT2M, PT1H)
+
+Set(LocalDate(2018, 8, 29), LocalDate(2018, 8, 30), LocalDate(2018, 8, 31)).max
+// 2018-08-31
+```
+
+Note that `Ordering.Implicits.infixOrderingOps` is automatically imported to make the operations `>`, `<`, `>=`, `<=`, `max`, `min` available. If you don't want this feature or you met some ambiguous implicit conversions, remove the auto import using `import minitime.{infixOrderingOps => _, _}`.
