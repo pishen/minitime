@@ -35,7 +35,7 @@ package object minitime {
     def /[R, C](r: R)(implicit divide: Divide[L, R, C]) = divide(l, r)
   }
 
-  implicit def infixOrderingOps[T: Ordering](x: T) ={
+  implicit def infixOrderingOps[T: Ordering](x: T) = {
     Ordering.Implicits.infixOrderingOps(x)
   }
 
