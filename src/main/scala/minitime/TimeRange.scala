@@ -8,7 +8,14 @@ case class TimeRange[T: Ordering, S: Multiply](
 )(
     implicit add: Add[T, S]
 ) extends Seq[T] {
-  override def apply(idx: Int): T = start + step * idx
+  override def apply(idx: Int): T = {
+    val res = start + step * idx
+    if (idx < 0 || (inclusive && res > end) || (!inclusive && res >= end)) {
+      throw new IndexOutOfBoundsException(idx.toString)
+    } else {
+      res
+    }
+  }
 
   override def iterator: Iterator[T] = Iterator
     .tabulate(Int.MaxValue)(start + step * _)
