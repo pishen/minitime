@@ -69,3 +69,27 @@ Set(LocalDate(2018, 8, 29), LocalDate(2018, 8, 30), LocalDate(2018, 8, 31)).max
 ```
 
 Note that `Ordering.Implicits.infixOrderingOps` is automatically imported to make the operations `>`, `<`, `>=`, `<=`, `max`, `min` available. If you don't want this feature or you met some ambiguous implicit conversions, remove the auto import using `import minitime.{infixOrderingOps => _, _}`.
+
+## TimeRange
+
+``` scala
+LocalDate.parse("2018-01-01") to LocalDate.parse("2018-01-05")
+// TimeRange(2018-01-01, 2018-01-02, 2018-01-03, 2018-01-04, 2018-01-05)
+
+LocalDate.parse("2018-01-01") till LocalDate.parse("2018-01-05")
+// TimeRange(2018-01-01, 2018-01-02, 2018-01-03, 2018-01-04)
+
+LocalDate.parse("2018-01-01") to LocalDate.parse("2018-01-05") by 2.days
+// TimeRange(2018-01-01, 2018-01-03, 2018-01-05)
+
+LocalDate.parse("2018-01-31") to LocalDate.parse("2018-05-01") by 1.month
+// TimeRange(2018-01-31, 2018-02-28, 2018-03-31, 2018-04-30)
+
+LocalDateTime.parse("2018-01-01T00:00:00") till LocalDateTime.parse("2018-01-01T00:00:03")
+// TimeRange(2018-01-01T00:00, 2018-01-01T00:00:01, 2018-01-01T00:00:02)
+
+LocalDateTime.parse("2018-01-01T00:00") to LocalDateTime.parse("2018-01-01T06:00") by 2.hour
+// TimeRange(2018-01-01T00:00, 2018-01-01T02:00, 2018-01-01T04:00, 2018-01-01T06:00)
+```
+
+`TimeRange[T]` extends `Seq[T]`, with a constant time `apply()` and linear time `length()`.
