@@ -1,13 +1,33 @@
 import sbtcrossproject.CrossPlugin.autoImport.{crossProject, CrossType}
 
-lazy val root = crossProject(JSPlatform, JVMPlatform)
+name := "minitime"
+
+ThisBuild / version := "0.1.0"
+ThisBuild / scalaVersion := "2.12.7"
+
+ThisBuild / organization := "net.pishen"
+ThisBuild / licenses += "Apache-2.0" -> url("https://www.apache.org/licenses/LICENSE-2.0.html")
+ThisBuild / homepage := Some(url("https://github.com/pishen/minitime"))
+ThisBuild / pomExtra := (
+  <scm>
+    <url>https://github.com/pishen/minitime.git</url>
+    <connection>scm:git:git@github.com:pishen/minitime.git</connection>
+  </scm>
+  <developers>
+    <developer>
+      <id>pishen</id>
+      <name>Pishen Tsai</name>
+    </developer>
+  </developers>
+)
+
+publish / skip := true
+
+lazy val cross = crossProject(JSPlatform, JVMPlatform)
   .crossType(CrossType.Pure)
   .in(file("."))
   .settings(
-    name := "minitime",
-    version := "0.1.0-SNAPSHOT",
-    scalaVersion := "2.12.7",
-    organization := "net.pishen"
+    name := "minitime"
   )
   .jsSettings(
     libraryDependencies ++= Seq(
@@ -15,5 +35,5 @@ lazy val root = crossProject(JSPlatform, JVMPlatform)
     )
   )
 
-lazy val rootJVM = root.jvm
-lazy val rootJS = root.js
+lazy val crossJVM = cross.jvm
+lazy val crossJS = cross.js
