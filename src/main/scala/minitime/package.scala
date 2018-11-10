@@ -37,7 +37,7 @@ package object minitime {
     def to[S](r: L)(implicit builder: TimeRangeBuilder[L, S]) = {
       builder.build(l, r, true)
     }
-    def until[S](r: L)(implicit builder: TimeRangeBuilder[L, S]) = {
+    def till[S](r: L)(implicit builder: TimeRangeBuilder[L, S]) = {
       builder.build(l, r, false)
     }
   }
