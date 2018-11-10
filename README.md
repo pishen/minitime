@@ -4,6 +4,15 @@ A Scala wrapper around [Java Time](https://docs.oracle.com/javase/8/docs/api/jav
 
 This library is inspired by [time for scala](https://github.com/johanandren/timeforscala) and [chronoscala](https://github.com/opt-tech/chronoscala), but with slightly different functions and more typeclass design.
 
+## Installation
+
+``` scala
+libraryDependencies += "net.pishen" %% "minitime" % "0.1.0"
+
+// for Scala.js
+libraryDependencies += "net.pishen" %%% "minitime" % "0.1.0"
+```
+
 ## Instantiation
 
 ``` scala
