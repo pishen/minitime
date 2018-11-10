@@ -1,5 +1,7 @@
 package minitime
 
+import scala.util.Try
+
 case class TimeRange[T: Ordering, S: Multiply](
     start: T,
     end: T,
@@ -24,8 +26,9 @@ case class TimeRange[T: Ordering, S: Multiply](
   override def length: Int = iterator.length
 
   override def toString = {
-    val preposition = if (inclusive) "to" else "until"
-    s"TimeRange $start $preposition $end by $step"
+    val content = iterator.take(15).mkString(", ")
+    val more = Try(apply(15)).toOption.map(_ => ", ...").getOrElse("")
+    s"TimeRange($content$more)"
   }
 
   def by[P: Multiply](step: P)(implicit add: Add[T, P]): TimeRange[T, P] = {
