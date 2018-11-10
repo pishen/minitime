@@ -33,6 +33,13 @@ package object minitime {
     def -[R, C](r: R)(implicit subtract: Subtract[L, R, C]) = subtract(l, r)
     def *(scalar: Int)(implicit multiply: Multiply[L]) = multiply(l, scalar)
     def /[R, C](r: R)(implicit divide: Divide[L, R, C]) = divide(l, r)
+
+    def to[S](r: L)(implicit builder: TimeRangeBuilder[L, S]) = {
+      builder.build(l, r, true)
+    }
+    def until[S](r: L)(implicit builder: TimeRangeBuilder[L, S]) = {
+      builder.build(l, r, false)
+    }
   }
 
   implicit def infixOrderingOps[T: Ordering](x: T) = {
