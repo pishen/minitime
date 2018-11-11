@@ -2,7 +2,7 @@
 
 A [Java Time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html) wrapper for Scala and Scala.js.
 
-This library is inspired by [time for scala](https://github.com/johanandren/timeforscala) and [chronoscala](https://github.com/opt-tech/chronoscala), but with slightly different functions and more typeclass design.
+This library is inspired by [time for scala](https://github.com/johanandren/timeforscala) and [chronoscala](https://github.com/opt-tech/chronoscala), with slightly different functions and more typeclass design.
 
 ## Installation
 
