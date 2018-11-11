@@ -1,7 +1,5 @@
 package minitime
 
-import java.time._
-
 trait Divide[L, R, C] {
   def apply(l: L, r: R): C
 }

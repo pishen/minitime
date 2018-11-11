@@ -1,8 +1,15 @@
-import java.time.{Duration => JDuration, Period => JPeriod, _}
+import java.time.{Duration => JDuration, Period => JPeriod}
 import scala.concurrent.duration._
 import scala.language.implicitConversions
 
 package object minitime {
+  type LocalDate = java.time.LocalDate
+  type LocalDateTime = java.time.LocalDateTime
+  type LocalTime = java.time.LocalTime
+  type ZonedDateTime = java.time.ZonedDateTime
+  type Period = java.time.Period
+  type Duration = java.time.Duration
+
   implicit class RichInt(i: Int) {
     def hour = JDuration.ofHours(i)
     def hours = JDuration.ofHours(i)
@@ -53,5 +60,5 @@ package object minitime {
   implicit val ldtOrdering = createOrdering[LocalDateTime](_ compareTo _)
   implicit val ltOrdering = createOrdering[LocalTime](_ compareTo _)
   implicit val zdtOrdering = createOrdering[ZonedDateTime](_ compareTo _)
-  implicit val dOrdering = createOrdering[JDuration](_ compareTo _)
+  implicit val dOrdering = createOrdering[Duration](_ compareTo _)
 }

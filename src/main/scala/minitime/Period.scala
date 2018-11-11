@@ -1,6 +1,6 @@
 package minitime
 
-import java.time.{Period => JPeriod, _}
+import java.time.{Period => JPeriod}
 
 object Period {
   def apply(years: Int, months: Int, days: Int) = {

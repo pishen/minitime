@@ -1,7 +1,5 @@
 package minitime
 
-import java.time._
-
 trait Add[L, R] {
   def apply(l: L, r: R): L
 }

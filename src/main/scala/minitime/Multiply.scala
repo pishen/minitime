@@ -1,7 +1,5 @@
 package minitime
 
-import java.time._
-
 trait Multiply[A] {
   def apply(a: A, scalar: Int): A
 }

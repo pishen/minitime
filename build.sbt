@@ -2,7 +2,7 @@ import sbtcrossproject.CrossPlugin.autoImport.{crossProject, CrossType}
 
 name := "minitime"
 
-ThisBuild / version := "0.1.0"
+ThisBuild / version := "0.2.0-SNAPSHOT"
 ThisBuild / scalaVersion := "2.12.7"
 
 ThisBuild / organization := "net.pishen"

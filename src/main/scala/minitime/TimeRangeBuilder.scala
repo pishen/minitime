@@ -1,7 +1,5 @@
 package minitime
 
-import java.time._
-
 trait TimeRangeBuilder[T, S] {
   def build(start: T, end: T, inclusive: Boolean): TimeRange[T, S]
 }

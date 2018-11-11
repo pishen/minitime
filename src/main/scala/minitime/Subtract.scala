@@ -1,6 +1,5 @@
 package minitime
 
-import java.time._
 import java.time.temporal.ChronoUnit
 
 trait Subtract[L, R, C] {
