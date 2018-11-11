@@ -7,10 +7,10 @@ This library is inspired by [time for scala](https://github.com/johanandren/time
 ## Installation
 
 ``` scala
-libraryDependencies += "net.pishen" %% "minitime" % "0.1.0"
+libraryDependencies += "net.pishen" %% "minitime" % "0.2.0"
 
 // for Scala.js
-libraryDependencies += "net.pishen" %%% "minitime" % "0.1.0"
+libraryDependencies += "net.pishen" %%% "minitime" % "0.2.0"
 ```
 
 ## Instantiation
