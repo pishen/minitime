@@ -1,8 +1,10 @@
 # Minitime
 
-A [Java Time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html) wrapper for Scala and Scala.js.
+A Scala/Scala.js library which lets you operate on time and dates using mini DSL like `+`, `-`, `*`, `/`, `>`, `<`, `to`, `sortBy`, and more.
 
-This library is inspired by [time for scala](https://github.com/johanandren/timeforscala) and [chronoscala](https://github.com/opt-tech/chronoscala), with slightly different functions and more typeclass design.
+This library is a Scala wrapper around [Java 8 Time API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html), with Scala.js implementation supported by [scala-java-time](http://cquiroz.github.io/scala-java-time/).
+
+Inspired by [time for scala](https://github.com/johanandren/timeforscala) and [chronoscala](https://github.com/opt-tech/chronoscala), I tried to provide additional features like time range (`t1 to t2 by 3.hours`) and `Ordering` typeclasses.
 
 ## Installation
 
