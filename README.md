@@ -1,6 +1,6 @@
 # Minitime
 
-A Scala/Scala.js library which lets you operate on time and dates using mini DSL like `+`, `-`, `*`, `/`, `>`, `<`, `to`, `sortBy`, and more.
+A Scala/Scala.js library which lets you operate on time and dates easily using `+`, `-`, `*`, `/`, `>`, `<`, `to`, `sortBy`, and more.
 
 This library is a Scala wrapper around [Java 8 Time API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html), with Scala.js implementation supported by [scala-java-time](http://cquiroz.github.io/scala-java-time/).
 
