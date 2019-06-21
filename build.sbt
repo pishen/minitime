@@ -2,7 +2,7 @@ import sbtcrossproject.CrossPlugin.autoImport.{crossProject, CrossType}
 
 name := "minitime"
 
-ThisBuild / version := "0.2.0"
+ThisBuild / version := "0.2.1"
 ThisBuild / scalaVersion := "2.12.7"
 
 ThisBuild / organization := "net.pishen"
@@ -31,7 +31,7 @@ lazy val cross = crossProject(JSPlatform, JVMPlatform)
   )
   .jsSettings(
     libraryDependencies ++= Seq(
-      "io.github.cquiroz" %%% "scala-java-time" % "2.0.0-M13"
+      "io.github.cquiroz" %%% "scala-java-time" % "2.0.0-RC1"
     )
   )
 
