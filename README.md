@@ -9,10 +9,10 @@ Inspired by [time for scala](https://github.com/johanandren/timeforscala) and [c
 ## Installation
 
 ``` scala
-libraryDependencies += "net.pishen" %% "minitime" % "0.2.0"
+libraryDependencies += "net.pishen" %% "minitime" % "0.2.1"
 
 // for Scala.js
-libraryDependencies += "net.pishen" %%% "minitime" % "0.2.0"
+libraryDependencies += "net.pishen" %%% "minitime" % "0.2.1"
 ```
 
 ## Instantiation
