@@ -23,11 +23,14 @@ ThisBuild / pomExtra := (
 
 publish / skip := true
 
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8" % Test
+
 lazy val cross = crossProject(JSPlatform, JVMPlatform)
   .crossType(CrossType.Pure)
   .in(file("."))
   .settings(
-    name := "minitime"
+    name := "minitime",
+    libraryDependencies += "org.scalatest" %%% "scalatest" % "3.0.8" % Test
   )
   .jsSettings(
     libraryDependencies ++= Seq(
