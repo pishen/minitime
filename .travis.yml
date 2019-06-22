@@ -19,3 +19,4 @@ before_cache:
 script:
   - sbt checkAllFormat
   - sbt clean coverage test
+  - sbt coverageReport
