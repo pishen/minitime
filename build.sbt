@@ -40,5 +40,7 @@ lazy val crossJS = cross.js
 
 scalafmtOnCompile in ThisBuild := true
 
+coverageMinimum := 70
+
 addCommandAlias("formatAll", "; scalafmt; test:scalafmt; scalafmtSbt")
 addCommandAlias("checkAllFormat", "; scalafmtCheck; test:scalafmtCheck; scalafmtSbtCheck")
