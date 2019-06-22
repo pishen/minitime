@@ -38,9 +38,6 @@ lazy val cross = crossProject(JSPlatform, JVMPlatform)
     )
   )
 
-lazy val crossJVM = cross.jvm
-lazy val crossJS = cross.js
-
 scalafmtOnCompile in ThisBuild := true
 
 coverageMinimum := 70
