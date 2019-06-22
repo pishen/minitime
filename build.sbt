@@ -37,3 +37,8 @@ lazy val cross = crossProject(JSPlatform, JVMPlatform)
 
 lazy val crossJVM = cross.jvm
 lazy val crossJS = cross.js
+
+scalafmtOnCompile in ThisBuild := true
+
+addCommandAlias("formatAll", "; scalafmt; test:scalafmt; scalafmtSbt")
+addCommandAlias("checkAllFormat", "; scalafmtCheck; test:scalafmtCheck; scalafmtSbtCheck")
