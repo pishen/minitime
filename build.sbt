@@ -37,5 +37,3 @@ lazy val cross = crossProject(JSPlatform, JVMPlatform)
       "io.github.cquiroz" %%% "scala-java-time" % "2.0.0-RC1"
     )
   )
-
-coverageMinimum := 70
