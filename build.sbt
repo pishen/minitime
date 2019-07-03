@@ -26,6 +26,7 @@ publish / skip := true
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8" % Test
 
 lazy val cross = crossProject(JSPlatform, JVMPlatform)
+  .withoutSuffixFor(JVMPlatform)
   .crossType(CrossType.Pure)
   .in(file("."))
   .settings(
