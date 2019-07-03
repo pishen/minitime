@@ -1,21 +1,21 @@
 package minitime
 
-class PeriodSpec extends BaseSpec {
+import org.scalatest.FlatSpec
 
-  "minitime.Period" should {
-    "apply" in {
-      val period = Period(2019, 6, 21)
-      period.getYears shouldEqual 2019
-      period.getMonths shouldEqual 6
-      period.getDays shouldEqual 21
-    }
+class PeriodSpec extends FlatSpec {
 
-    "parse" in {
-      val period = Period.parse("P1Y2M3D")
-      period.getYears shouldEqual 1
-      period.getMonths shouldEqual 2
-      period.getDays shouldEqual 3
-    }
+  "minitime.Period" should "create java.time.Period" in {
+    val period = Period(2019, 6, 21)
+    assert(period.getYears == 2019)
+    assert(period.getMonths == 6)
+    assert(period.getDays == 21)
+  }
+
+  "minitime.Period" should "parse ISO-8601 period formats' string" in {
+    val period = Period.parse("P1Y2M3D")
+    assert(period.getYears == 1)
+    assert(period.getMonths == 2)
+    assert(period.getDays == 3)
   }
 
 }
