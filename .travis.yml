@@ -7,7 +7,7 @@ before_install:
 cache:
   directories:
     - $HOME/.sbt
-    - $HOME/.ivy2
+    - $HOME/.ivy2/cache
 
 before_cache:
   # Cleanup the cached directories to avoid unnecessary cache updates
