@@ -1,5 +1,5 @@
 # Minitime
-[![Build Status](https://travis-ci.org/pishen/minitime.svg)](https://travis-ci.org/pishen/minitime)
+[![Build Status](https://api.travis-ci.org/pishen/minitime.svg?branch=master)](https://travis-ci.org/pishen/minitime)
 
 A Scala/Scala.js library which lets you operate on time and dates easily using `+`, `-`, `*`, `/`, `>`, `<`, `to`, `sortBy`, and more.
 
