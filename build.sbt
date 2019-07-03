@@ -38,6 +38,4 @@ lazy val cross = crossProject(JSPlatform, JVMPlatform)
     )
   )
 
-scalafmtOnCompile in ThisBuild := true
-
 coverageMinimum := 70
