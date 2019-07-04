@@ -10,7 +10,7 @@ package object minitime {
   type Period = java.time.Period
   type Duration = java.time.Duration
 
-  implicit class RichInt(i: Int) {
+  implicit class RichInt(val i: Int) extends AnyVal {
     def hour = JDuration.ofHours(i)
     def hours = JDuration.ofHours(i)
     def minute = JDuration.ofMinutes(i)
@@ -31,11 +31,11 @@ package object minitime {
     def years = JPeriod.ofYears(i)
   }
 
-  implicit class RichDuration(d: JDuration) {
+  implicit class RichDuration(val d: JDuration) extends AnyVal {
     def toFiniteDuration = FiniteDuration(d.toNanos, NANOSECONDS)
   }
 
-  implicit class Infix[L](l: L) {
+  implicit class Infix[L](val l: L) extends AnyVal {
     def +[R](r: R)(implicit add: Add[L, R]) = add(l, r)
     def -[R, C](r: R)(implicit subtract: Subtract[L, R, C]) = subtract(l, r)
     def *(scalar: Int)(implicit multiply: Multiply[L]) = multiply(l, scalar)
