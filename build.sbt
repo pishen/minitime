@@ -24,16 +24,15 @@ ThisBuild / pomExtra := (
 publish / skip := true
 
 lazy val cross = crossProject(JSPlatform, JVMPlatform)
+  .withoutSuffixFor(JVMPlatform)
   .crossType(CrossType.Pure)
-  .in(file("."))
+  .in(file("minitime"))
   .settings(
-    name := "minitime"
+    name := "minitime",
+    libraryDependencies += "org.scalatest" %%% "scalatest" % "3.0.8" % Test
   )
   .jsSettings(
     libraryDependencies ++= Seq(
       "io.github.cquiroz" %%% "scala-java-time" % "2.0.0-RC1"
     )
   )
-
-lazy val crossJVM = cross.jvm
-lazy val crossJS = cross.js

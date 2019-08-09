@@ -19,9 +19,10 @@ case class TimeRange[T: Ordering, S: Multiply](
     }
   }
 
-  override def iterator: Iterator[T] = Iterator
-    .tabulate(Int.MaxValue)(start + step * _)
-    .takeWhile(t => if (inclusive) t <= end else t < end)
+  override def iterator: Iterator[T] =
+    Iterator
+      .tabulate(Int.MaxValue)(start + step * _)
+      .takeWhile(t => if (inclusive) t <= end else t < end)
 
   override def length: Int = iterator.length
 
