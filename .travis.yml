@@ -17,5 +17,5 @@ before_cache:
 
 script:
   - sbt scalafmtCheckAll
-  - sbt clean coverage cross/test
+  - sbt clean coverage test
   - sbt coverageReport

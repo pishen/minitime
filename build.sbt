@@ -23,10 +23,8 @@ ThisBuild / pomExtra := (
 
 publish / skip := true
 
-lazy val cross = crossProject(JSPlatform, JVMPlatform)
-  .withoutSuffixFor(JVMPlatform)
+lazy val minitime = crossProject(JSPlatform, JVMPlatform)
   .crossType(CrossType.Pure)
-  .in(file("minitime"))
   .settings(
     name := "minitime",
     libraryDependencies += "org.scalatest" %%% "scalatest" % "3.0.8" % Test
