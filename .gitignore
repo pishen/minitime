@@ -1,3 +1,7 @@
 *.class
 *.log
 target/
+.bloop
+.metals
+.js
+.jvm
