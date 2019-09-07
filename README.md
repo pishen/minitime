@@ -10,10 +10,10 @@ Inspired by [time for scala](https://github.com/johanandren/timeforscala) and [c
 ## Installation
 
 ``` scala
-libraryDependencies += "net.pishen" %% "minitime" % "0.2.1"
+libraryDependencies += "net.pishen" %% "minitime" % "0.3.0"
 
 // for Scala.js
-libraryDependencies += "net.pishen" %%% "minitime" % "0.2.1"
+libraryDependencies += "net.pishen" %%% "minitime" % "0.3.0"
 ```
 
 ## Instantiation
@@ -55,7 +55,7 @@ LocalDateTime(2018, 8, 31, 23, 59) + 1.minute + 3.seconds
 // 2018-09-01T00:00:03
 
 LocalDate(2018, 3, 1) - LocalDate(2018, 2, 1)
-// 28
+// P28D
 
 LocalDateTime.parse("2018-09-01T15:39:39") - LocalDateTime(2018, 8, 31, 0, 0)
 // java.time.Duration = PT39H39M39S
