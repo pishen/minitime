@@ -13,7 +13,7 @@ object Subtract {
 
   implicit val ldp = create((l: LocalDate, r: Period) => l minus r)
   implicit val ldld = create(
-    (l: LocalDate, r: LocalDate) => ChronoUnit.DAYS.between(r, l)
+    (l: LocalDate, r: LocalDate) => Period.ofDays(ChronoUnit.DAYS.between(r, l).toInt)
   )
   implicit val ldtp = create((l: LocalDateTime, r: Period) => l minus r)
   implicit val ldtd = create((l: LocalDateTime, r: Duration) => l minus r)
