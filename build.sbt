@@ -2,8 +2,8 @@ import sbtcrossproject.CrossPlugin.autoImport.{crossProject, CrossType}
 
 name := "minitime"
 
-ThisBuild / version := "0.2.1"
-ThisBuild / scalaVersion := "2.12.7"
+ThisBuild / version := "0.3.0"
+ThisBuild / scalaVersion := "2.12.9"
 
 ThisBuild / organization := "net.pishen"
 ThisBuild / licenses += "Apache-2.0" -> url("https://www.apache.org/licenses/LICENSE-2.0.html")
