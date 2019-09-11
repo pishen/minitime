@@ -33,6 +33,6 @@ case class TimeRange[T: Ordering, S: Multiply](
   }
 
   def by[P: Multiply](step: P)(implicit add: Add[T, P]): TimeRange[T, P] = {
-    new TimeRange(start, end, step, inclusive)
+    TimeRange(start, end, step, inclusive)
   }
 }
